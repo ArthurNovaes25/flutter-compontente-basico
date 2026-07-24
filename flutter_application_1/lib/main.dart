@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           actions: [Icon(Icons.menu, color: Colors.white,size: 24,),
            Padding(padding: EdgeInsetsGeometry.only(right: 16))],
           ),
-        //sou parkour haha
+        //sou artur parkour haha
         body: SizedBox(
           width: double.infinity,
           height: double.infinity,
