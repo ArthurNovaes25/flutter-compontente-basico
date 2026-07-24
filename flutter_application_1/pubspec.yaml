@@ -1,0 +1,84 @@
+name: flutter_application_1
+description: "A new Flutter project."
+# A linha a seguir evita que o pacote seja publicado acidentalmente no
+# pub.dev usando `flutter pubpublish`. Isto é preferido para pacotes privados.
+publish_to: 'none' # Remova esta linha se desejar publicar em pub.dev
+# A seguir define a versão e o número de compilação do seu aplicativo.
+# Um número de versão são três números separados por pontos, como 1.2.43
+# seguido por um número de compilação opcional separado por um +.
+# Tanto a versão quanto o número do construtor podem ser substituídos no flutter
+# build especificando --build-name e --build-number, respectivamente.
+# No Android, build-name é usado como versionName enquanto build-number é usado como versionCode.
+# Leia mais sobre o versionamento do Android em https://developer.android.com/studio/publish/versioning
+# No iOS, o nome da compilação é usado como CFBundleShortVersionString enquanto o número da compilação é usado como CFBundleVersion.
+# Leia mais sobre versionamento para iOS em
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# No Windows, build-name é usado como partes principais, secundárias e de patch
+# das versões do produto e do arquivo, enquanto build-number é usado como sufixo de compilação.
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.12.2
+
+# As dependências especificam outros pacotes que seu pacote precisa para funcionar.
+# Para atualizar automaticamente as dependências do seu pacote para as versões mais recentes
+# considere executar `flutter pub upgrade --major-versions`. Alternativamente,
+# dependências podem ser atualizadas manualmente alterando os números de versão abaixo para
+# a versão mais recente disponível em pub.dev. Para ver quais dependências têm mais recentes
+# versões disponíveis, execute `flutter pub desatualizado`.
+dependencies:
+  flutter:
+    sdk: flutter
+# O seguinte adiciona a fonte Cupertino Icons ao seu aplicativo.
+  # Use com a classe CupertinoIcons para ícones de estilo iOS.
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+# O pacote "flutter_lints" abaixo contém um conjunto de lints recomendados para
+  # incentive boas práticas de codificação. O conjunto de lint fornecido pelo pacote é
+  # ativado no arquivo `análise_options.yaml` localizado na raiz do seu
+  # pacote. Consulte esse arquivo para obter informações sobre como desativar lint específico
+  # regras e ativação de outras adicionais.
+  flutter_lints: ^6.0.0
+# Para obter informações sobre a parte genérica do Dart deste arquivo, consulte o
+# página seguinte: https://dart.dev/tools/pub/pubspec
+
+# A seção a seguir é específica para pacotes Flutter.
+flutter:
+
+# A linha a seguir garante que a fonte Material Icons seja
+  # incluído em seu aplicativo, para que você possa usar os ícones em
+  # a classe de ícones de material.
+  uses-material-design: true
+# Para adicionar ativos ao seu aplicativo, adicione uma seção de ativos, como esta:
+  # ativos:
+  # -images/a_dot_burr.jpeg
+  # -images/a_dot_ham.jpeg
+
+  # Um ativo de imagem pode se referir a uma ou mais "variantes" específicas de resolução. Consulte
+  # https://flutter.dev/to/resolution-aware-images
+
+  # Para obter detalhes sobre como adicionar ativos de dependências de pacotes, consulte
+  # https://flutter.dev/to/asset-from-package
+
+  # Para adicionar fontes personalizadas ao seu aplicativo, adicione uma seção de fontes aqui,
+# nesta seção de "vibração". Cada entrada nesta lista deve ter um
+  # chave "family" com o nome da família da fonte e uma chave "fonts" com um
+  # lista fornecendo o recurso e outros descritores da fonte. Para
+  # exemplo:
+  # fontes:
+  # -família: Schyler
+  # fontes:
+  # -ativo: fonts/Schyler-Regular.ttf
+  # -ativo: fonts/Schyler-Italic.ttf
+  # estilo: itálico
+  # -família: Trajano Pro
+  # fontes:
+  # -ativo: fonts/TrajanPro.ttf
+# -ativo: fonts/TrajanPro_Bold.ttf
+  #peso: 700
+  #
+  # Para detalhes sobre fontes de dependências de pacotes,
+  # veja https://flutter.dev/to/font-from-package
