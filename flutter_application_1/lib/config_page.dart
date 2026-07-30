@@ -173,67 +173,76 @@ class ConfigPage extends StatelessWidget {
             ),
 
           Row(
+            spacing: 12,
             children: [
 
-              Container(
-                width: 160,
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  border: Border(),
-                  borderRadius: BorderRadius.circular(12),
-                  color: Color(0xFFE8F5EE)
+              Expanded(
+                child: Container(
+                  // width: 160,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    border: Border(),
+                    borderRadius: BorderRadius.circular(12),
+                    color: Color(0xFFE8F5EE)
+                  ),
+                child: Column(
+                  children: [
+                    Icon(Icons.devices, color: Color(0xFF146c43),),
+                    Text('3',style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF1F1F1F),
+                    ),
+                    ),
+                    Text('Dispositivos',style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF8A8A8A),
+                    ),
+                    )
+                  ],
+                )
                 ),
-              child: Column(
-                children: [
-                  Icon(Icons.devices, color: Color(0xFF146c43),),
-                  Text('3',style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF1F1F1F),
-                  ),
-                  ),
-                  Text('Dispositivos',style: TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF8A8A8A),
-                  ),
-                  )
-                ],
-              )
               ),
-              
-              Spacer(flex: 12),
-              
-              Container(
-                width: 160,
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  border: Border(),
-                  borderRadius: BorderRadius.circular(12),
-                  color: Color(0xFFE8F5EE)
+              Expanded(
+                child: Container(
+                  // width: 160,
+                  padding: EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    border: Border(),
+                    borderRadius: BorderRadius.circular(12),
+                    color: Color(0xFFE8F5EE)
+                  ),
+                
+                child: Column(
+                  children: [
+                    Icon(Icons.calendar_today, color: Color(0xFF146c43)),
+                    Text('12 dias',style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: Color(0xFF1F1F1F),
+                    ),
+                    ),
+                    Text('Expira em',style: TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF8A8A8A),
+                    ),
+                    )
+                  ],
+                ),  
                 ),
-              
-              child: Column(
-                children: [
-                  Icon(Icons.calendar_today, color: Color(0xFF146c43)),
-                  Text('12 dias',style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600,
-                    color: Color(0xFF1F1F1F),
-                  ),
-                  ),
-                  Text('Expira em',style: TextStyle(
-                    fontSize: 12,
-                    color: Color(0xFF8A8A8A),
-                  ),
-                  )
-                ],
-              ),  
               ),
             ],
           ),
             ],
           ),
-        )
+        ),
+        Spacer(),
+        SizedBox(
+          width: double.infinity,
+          child: OutlinedButton(onPressed: (){}, child: Text('Sair da conta', style: TextStyle(
+            color: Colors.red,
+          ),)))
+
         ],
       ),
       ),
