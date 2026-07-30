@@ -13,7 +13,7 @@ import 'package:flutter_application_1/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     //Construa nosso aplicativo e acione um frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(const HomePage());
 
   //Verifique se nosso contador começa em 0.
     expect(find.text('0'), findsOneWidget);

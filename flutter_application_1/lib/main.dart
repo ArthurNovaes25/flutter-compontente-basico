@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'config_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -6,122 +7,135 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-//
-//Este widget é a raiz da sua aplicação.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter',
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF146C43),
+        ),
       ),
-      home: Scaffold(
-        appBar:
-        AppBar(
-          backgroundColor:  Color(0xFF146C43),  foregroundColor: Colors.white,  elevation: 0, centerTitle: false, 
-          leading: Icon(Icons.arrow_back, color: Colors.white, size: 24,),
-          title: Text('Perfil', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Colors.white),),
-          actions: [Icon(Icons.menu, color: Colors.white,size: 24,),
-           Padding(padding: EdgeInsetsGeometry.only(right: 16))],
+      home: const HomePage(),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  Widget infoCard(IconData icon, String valor, String titulo) {
+    return Container(
+      width: 92,
+      padding: const EdgeInsets.symmetric(vertical: 16),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.grey.shade300),
+        borderRadius: BorderRadius.circular(8),
+        color: Colors.white,
+      ),
+      child: Column(
+        children: [
+          Icon(
+            icon,
+            color: const Color(0xFF146C43),
           ),
-        //sou artur parkour haha
-        body: SizedBox(
-          width: double.infinity,
-          height: double.infinity,
-          child:
-        Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [Container(
+          const SizedBox(height: 4),
+          Text(
+            valor,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            titulo,
+            style: TextStyle(
+              color: Colors.grey.shade600,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color(0xFF146C43),
+        foregroundColor: Colors.white,
+        title: const Text("Perfil"),
+      ),
+
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
               width: 96,
               height: 96,
               decoration: BoxDecoration(
                 color: Colors.green.shade50,
                 shape: BoxShape.circle,
               ),
-              child: Icon(Icons.person, color: Color(0xFF146C43), size: 48,),
-             
+              child: const Icon(
+                Icons.person,
+                size: 48,
+                color: Color(0xFF146C43),
+              ),
             ),
-            SizedBox(height: 14),
-           Text('Ana Souza', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),
-           ),
-            SizedBox(height: 4),
-           Text('Desenvolvedora de Flutter', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey.shade500),
-           ),
-            
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                width: 92,
-                padding: EdgeInsets.symmetric(vertical: 16),
-                decoration: BoxDecoration(
-                 border: Border.all(color: Colors.grey.shade300),
-                 borderRadius: BorderRadius.circular(8),
-                 color: Colors.white,
-                ),
-            child: Column(
+            const SizedBox(height: 16),
+            const Text(
+              "Ana Souza",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              "Desenvolvedora Flutter",
+              style: TextStyle(color: Colors.grey.shade600),
+            ),
+            const SizedBox(height: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon( Icons.message, color: Color(0xFF146C43), size: 24,),
-                SizedBox(height: 4),
-                Text('128', style: TextStyle(fontSize: 16 , fontWeight: FontWeight.bold, color: Colors.black),),
-                SizedBox(height: 4),
-                Text('Posts', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey.shade500),),
+                infoCard(Icons.message, "128", "Posts"),
+                const SizedBox(width: 12),
+                infoCard(Icons.group, "389", "Seguidores"),
+                const SizedBox(width: 12),
+                infoCard(Icons.person_add, "56", "Seguindo"),
               ],
             ),
-            ),
-            SizedBox(width: 12),
-            Container(
-                width: 92,
-                padding: EdgeInsets.symmetric(vertical: 16),
-                decoration: BoxDecoration(
-                 border: Border.all(color: Colors.grey.shade300),
-                 borderRadius: BorderRadius.circular(8),
-                 color: Colors.white,
-                ),
-            child: Column(
-              children: [
-                Icon( Icons.group, color: Color(0xFF146C43), size: 24,),
-                SizedBox(height: 4),
-                Text('389', style: TextStyle(fontSize: 16 , fontWeight: FontWeight.bold, color: Colors.black),),
-                SizedBox(height: 4),
-                Text('Seguidores', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey.shade500),),
-              ],
-            ),
-            ),
-            SizedBox(width: 12),
-            Container(
-                width: 92,
-                padding: EdgeInsets.symmetric(vertical: 16),
-                decoration: BoxDecoration(
-                 border: Border.all(color: Colors.grey.shade300),
-                 borderRadius: BorderRadius.circular(8),
-                 color: Colors.white,
-                ),
-            child: Column(
-              children: [
-                Icon( Icons.person_add, color: Color(0xFF146C43), size: 26,),
-                SizedBox(height: 4),
-                Text('56', style: TextStyle(fontSize: 16 , fontWeight: FontWeight.bold, color: Colors.black),),
-                SizedBox(height: 4),
-                Text('Seguindo', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: Colors.grey.shade500),),
-              ],
-            ),
-            )
-            ],
-          )  
-            
-            ],
-          
-
-
-          ),
-
+          ],
         ),
+      ),
 
-       
-      )  
-    )
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        onTap: (index) {
+          if (index == 1) {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const ConfigPage(),
+              ),
+            );
+          }
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "Perfil",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: "Configurações",
+          ),
+        ],
+      ),
     );
   }
 }
